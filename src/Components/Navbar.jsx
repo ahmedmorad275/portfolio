@@ -1,12 +1,13 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from 'react';
 import {
   MdOutlineLanguage,
   MdOutlineLightMode,
   MdOutlineDarkMode,
   MdOutlineMenu,
-} from "react-icons/md";
-import { IoMdClose } from "react-icons/io";
-import { ThemeContext } from "../Context/ThemeContext";
+} from 'react-icons/md';
+import { motion } from 'motion/react';
+import { IoMdClose } from 'react-icons/io';
+import { ThemeContext } from '../Context/ThemeContext';
 
 export default function Navbar() {
   // State Management
@@ -16,28 +17,28 @@ export default function Navbar() {
   // Links Data
   const links = [
     {
-      name: "Home",
-      path: "#home",
+      name: 'Home',
+      path: '#home',
     },
     {
-      name: "About",
-      path: "#about",
+      name: 'About',
+      path: '#about',
     },
     {
-      name: "Skills",
-      path: "#skills",
+      name: 'Skills',
+      path: '#skills',
     },
     {
-      name: "Projects",
-      path: "#projects",
+      name: 'Projects',
+      path: '#projects',
     },
     {
-      name: "Experience",
-      path: "#experience",
+      name: 'Experience',
+      path: '#experience',
     },
     {
-      name: "Contact",
-      path: "#contact",
+      name: 'Contact',
+      path: '#contact',
     },
   ];
 
@@ -50,23 +51,31 @@ export default function Navbar() {
     }
   }, [openMenu]);
 
+  useEffect(() => {
+    localStorage.setItem('theme', theme);
+  }, [theme]);
+
   // UI Functions
   const handleMenuClick = () => {
     setOpenMenu((prev) => !prev);
   };
 
   const handleThemeClick = () => {
-    setTheme((prev) => (prev === "light" ? "dark" : "light"));
+    setTheme((prev) => (prev === 'light' ? 'dark' : 'light'));
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 transition-all bg-transparent duration-300 shadow dark:shadow-slate-800">
+    <motion.nav
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.8, ease: 'easeInOut' }}
+      className="fixed top-0 left-0 right-0 z-50 transition-all bg-transparent duration-300 shadow dark:shadow-slate-800">
       <div className="px-2 container mx-auto flex justify-between h-14 items-center">
         {/* Logo */}
         <div className="cursor-default text-2xl font-bold text-gray-800 dark:text-white">
           <p>
-            <span className="text-blue-600">{"<"}</span>AM
-            <span className="text-blue-600">{"/>"}</span>
+            <span className="text-blue-600">{'<'}</span>AM
+            <span className="text-blue-600">{'/>'}</span>
           </p>
         </div>
         {/* Links */}
@@ -76,8 +85,7 @@ export default function Navbar() {
               <li key={link.name}>
                 <a
                   href={link.path}
-                  className="dark:text-gray-300 text-slate-700 hover:text-blue-600 transition-colors duration-300"
-                >
+                  className="dark:text-gray-300 text-slate-700 hover:text-blue-600 transition-colors duration-300">
                   {link.name}
                 </a>
               </li>
@@ -89,15 +97,13 @@ export default function Navbar() {
           {/* Theme Toggle */}
           <div
             onClick={handleThemeClick}
-            className="toggleTheme cursor-pointer p-2 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-gray-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors"
-          >
-            {theme === "dark" ? <MdOutlineLightMode /> : <MdOutlineDarkMode />}
+            className="toggleTheme cursor-pointer p-2 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-gray-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">
+            {theme === 'dark' ? <MdOutlineLightMode /> : <MdOutlineDarkMode />}
           </div>
           {/* Menu on Mobile */}
           <div
             onClick={handleMenuClick}
-            className="toggleTheme md:hidden cursor-pointer p-2 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-gray-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors"
-          >
+            className="toggleTheme md:hidden cursor-pointer p-2 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-gray-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">
             {openMenu ? <IoMdClose /> : <MdOutlineMenu />}
           </div>
           {/* Language Switch */}
@@ -115,8 +121,7 @@ export default function Navbar() {
               <li key={link.name}>
                 <a
                   href={link.path}
-                  className="dark:text-gray-300 text-slate-700 hover:text-blue-400 transition-colors duration-300"
-                >
+                  className="dark:text-gray-300 text-slate-700 hover:text-blue-400 transition-colors duration-300">
                   {link.name}
                 </a>
               </li>
@@ -128,6 +133,6 @@ export default function Navbar() {
           </ul>
         </div>
       )}
-    </nav>
+    </motion.nav>
   );
 }
