@@ -1,14 +1,16 @@
-import Hero from "./Components/Hero";
-import Navbar from "./Components/Navbar";
-import { ThemeProvider } from "./Context/ThemeContext";
+import About from './Components/About';
+import Hero from './Components/Hero';
+import Navbar from './Components/Navbar';
+import { ThemeProvider } from './Context/ThemeContext';
 
 function App() {
   return (
     <ThemeProvider>
-      <header className="dark:bg-slate-900 bg-slate-50 min-h-screen flex items-center justify-center">
+      <header className="bg-linear-to-br dark:from-slate-900 dark:via-slate-900 dark:to-slate-800 from-blue-50 via-white to-green-50 min-h-screen flex items-center justify-center">
         <Navbar />
         <Hero />
       </header>
+      <About />
     </ThemeProvider>
   );
 }

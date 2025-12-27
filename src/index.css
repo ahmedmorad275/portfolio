@@ -4,7 +4,9 @@
 .arrowDown {
   animation: upAndDown 2s infinite both;
 }
-
+* {
+  scroll-behavior: smooth;
+}
 @keyframes heroAnimation {
   from {
     transform: translateY(60px);

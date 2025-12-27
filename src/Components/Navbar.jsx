@@ -69,7 +69,7 @@ export default function Navbar() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8, ease: 'easeInOut' }}
-      className="fixed top-0 left-0 right-0 z-50 transition-all bg-transparent duration-300 shadow dark:shadow-slate-800">
+      className="fixed top-0 left-0 right-0 z-50 transition-all bg-transparent duration-300">
       <div className="px-2 container mx-auto flex justify-between h-14 items-center">
         {/* Logo */}
         <div className="cursor-default text-2xl font-bold text-gray-800 dark:text-white">
