@@ -1,8 +1,10 @@
-@import 'tailwindcss';
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
 
 .arrowDown {
   animation: upAndDown 2s infinite both;
 }
+
 @keyframes upAndDown {
   0%,
   100% {
