@@ -1,16 +1,17 @@
-import { MdOutlineFileDownload } from 'react-icons/md';
-import { FaArrowDown } from 'react-icons/fa';
-import { motion } from 'motion/react';
+import { MdOutlineFileDownload } from "react-icons/md";
+import { FaArrowDown } from "react-icons/fa";
+import { motion } from "motion/react";
 
 export default function Hero() {
   return (
-    <section className="pt-16 px-4">
+    <section id="home" className="pt-16 px-4">
       <div className="container mx-auto">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div
-            initial={{ y: '100px' }}
-            animate={{ y: '0px' }}
-            transition={{ duration: 1.5 }}>
+            initial={{ y: "100px" }}
+            animate={{ y: "0px" }}
+            transition={{ duration: 1.5 }}
+          >
             <p className="text-gray-600 dark:text-gray-400 text-lg mb-2">
               Hi, I'm
             </p>
@@ -35,7 +36,9 @@ export default function Hero() {
             </div>
             <div className="arrowDown flex justify-center mt-16 text-2xl">
               <button className="text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 cursor-pointer transition-colors">
-                <FaArrowDown />
+                <a href="#about">
+                  <FaArrowDown />
+                </a>
               </button>
             </div>
           </motion.div>

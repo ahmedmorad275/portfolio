@@ -1,6 +1,7 @@
-import React from "react";
+import Section from "./Section";
 import myImage from "../assets/ahmed_morad.jpg";
-
+import { motion } from "motion/react";
+import Reveal from "./Reveal";
 export default function About() {
   const stats = [
     {
@@ -17,15 +18,16 @@ export default function About() {
     },
   ];
   return (
-    <section id="about" className="py-20 px-4 bg-white dark:bg-slate-900">
-      <div className="container mx-auto max-w-5xl">
-        <div className="text-center mb-12">
-          <h2 className="mb-4 font-bold text-gray-800 text-4xl md:text-5xl dark:text-white">
-            About Me
-          </h2>
-        </div>
+    <Reveal>
+      <Section id="about" type={"primarySection"} title={"About Me"}>
         <div className="gap-12 grid items-center md:grid-cols-2">
-          <div className="image flex items-center justify-center">
+          <motion.div
+            initial={{ opacity: 0, x: -10 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1 }}
+            viewport={{ once: true }}
+            className="image flex items-center justify-center pt-12"
+          >
             <div className="h-90 w-90 rounded-full overflow-hidden">
               <img
                 src={myImage}
@@ -33,17 +35,29 @@ export default function About() {
                 alt="Ahmed Morad"
               />
             </div>
-          </div>
+          </motion.div>
           <div className="description flex-1">
-            <div className="text-lg text-gray-700 mb-8 leading-relaxed dark:text-gray-300">
+            <motion.div
+              initial={{ opacity: 0, x: 10 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1 }}
+              viewport={{ once: true }}
+              className="text-lg text-gray-700 mb-8 leading-relaxed dark:text-gray-300"
+            >
               I'm a passionate Frontend Developer specializing in React.js with
               a keen eye for creating clean, efficient, and user-centric
               interfaces. I focus on writing maintainable code, optimizing
               performance, and delivering real-world solutions that make a
               difference. My goal is to craft digital experiences that are not
               only visually appealing but also highly functional and accessible.
-            </div>
-            <div className="grid grid-cols-3 gap-4">
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1 }}
+              viewport={{ once: true }}
+              className="grid grid-cols-3 gap-4"
+            >
               {stats.map((stat) => (
                 <div
                   key={stat.text}
@@ -57,10 +71,10 @@ export default function About() {
                   </p>
                 </div>
               ))}
-            </div>
+            </motion.div>
           </div>
         </div>
-      </div>
-    </section>
+      </Section>
+    </Reveal>
   );
 }

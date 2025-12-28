@@ -1,7 +1,8 @@
-import About from './Components/About';
-import Hero from './Components/Hero';
-import Navbar from './Components/Navbar';
-import { ThemeProvider } from './Context/ThemeContext';
+import About from "./Components/About";
+import Hero from "./Components/Hero";
+import Navbar from "./Components/Navbar";
+import Skills from "./Components/Skills";
+import { ThemeProvider } from "./Context/ThemeContext";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         <Hero />
       </header>
       <About />
+      <Skills />
     </ThemeProvider>
   );
 }
