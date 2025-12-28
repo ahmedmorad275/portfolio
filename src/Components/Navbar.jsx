@@ -71,13 +71,13 @@ export default function Navbar() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8, ease: "easeInOut" }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 right-0 left-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "backdrop-blur-md shadow-lg bg-white/90 dark:bg-slate-900/90"
+          ? "bg-white/90 shadow-lg backdrop-blur-md dark:bg-slate-900/90"
           : "bg-transparent"
       }`}
     >
-      <div className="px-2 container mx-auto flex justify-between h-14 items-center">
+      <div className="container mx-auto flex h-14 items-center justify-between px-2">
         {/* Logo */}
         <div className="cursor-default text-2xl font-bold text-gray-800 dark:text-white">
           <p>
@@ -87,12 +87,12 @@ export default function Navbar() {
         </div>
         {/* Links */}
         <div className="linksBox hidden md:block">
-          <ul className="flex space-x-8 items-center text-sm">
+          <ul className="flex items-center space-x-8 text-sm">
             {links.map((link) => (
               <li key={link.name}>
                 <a
                   href={link.path}
-                  className="dark:text-gray-300 text-slate-700 hover:text-blue-600 transition-colors duration-300"
+                  className="text-slate-700 transition-colors duration-300 hover:text-blue-600 dark:text-gray-300"
                 >
                   {link.name}
                 </a>
@@ -101,23 +101,23 @@ export default function Navbar() {
           </ul>
         </div>
         {/* Icons */}
-        <div className="iconsBox flex gap-4 items-center">
+        <div className="iconsBox flex items-center gap-4">
           {/* Theme Toggle */}
           <div
             onClick={handleThemeClick}
-            className="toggleTheme cursor-pointer p-2 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-gray-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors"
+            className="toggleTheme cursor-pointer rounded-lg bg-slate-100 p-2 text-slate-700 transition-colors hover:bg-slate-200 dark:bg-slate-800 dark:text-gray-300 dark:hover:bg-slate-700"
           >
             {theme === "dark" ? <MdOutlineLightMode /> : <MdOutlineDarkMode />}
           </div>
           {/* Menu on Mobile */}
           <div
             onClick={handleMenuClick}
-            className="toggleTheme md:hidden cursor-pointer p-2 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-gray-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors"
+            className="toggleTheme cursor-pointer rounded-lg bg-slate-100 p-2 text-slate-700 transition-colors hover:bg-slate-200 md:hidden dark:bg-slate-800 dark:text-gray-300 dark:hover:bg-slate-700"
           >
             {openMenu ? <IoMdClose /> : <MdOutlineMenu />}
           </div>
           {/* Language Switch */}
-          <div className="switchLanguage hidden cursor-pointer md:flex items-center space-x-1 rtl:space-x-reverse p-2 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-gray-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">
+          <div className="switchLanguage hidden cursor-pointer items-center space-x-1 rounded-lg bg-slate-100 p-2 text-slate-700 transition-colors hover:bg-slate-200 md:flex rtl:space-x-reverse dark:bg-slate-800 dark:text-gray-300 dark:hover:bg-slate-700">
             <MdOutlineLanguage />
             <p className="text-xs">AR</p>
           </div>
@@ -131,13 +131,13 @@ export default function Navbar() {
               <li key={link.name}>
                 <a
                   href={link.path}
-                  className="dark:text-gray-300 text-slate-700 hover:text-blue-400 transition-colors duration-300"
+                  className="text-slate-700 transition-colors duration-300 hover:text-blue-400 dark:text-gray-300"
                 >
                   {link.name}
                 </a>
               </li>
             ))}
-            <div className="switchLanguage flex items-center space-x-1 rtl:space-x-reverse text-slate-700 dark:text-gray-300">
+            <div className="switchLanguage flex items-center space-x-1 text-slate-700 rtl:space-x-reverse dark:text-gray-300">
               <MdOutlineLanguage />
               <p className="text-xs">العربية</p>
             </div>

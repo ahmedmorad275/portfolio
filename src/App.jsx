@@ -1,18 +1,45 @@
-import About from "./Components/About";
-import Hero from "./Components/Hero";
+import { lazy, Suspense } from "react";
 import Navbar from "./Components/Navbar";
-import Skills from "./Components/Skills";
 import { ThemeProvider } from "./Context/ThemeContext";
+
+// Lazy load components
+const Hero = lazy(() => import("./Components/Hero"));
+const About = lazy(() => import("./Components/About"));
+const Skills = lazy(() => import("./Components/Skills"));
 
 function App() {
   return (
     <ThemeProvider>
-      <header className="bg-linear-to-br dark:from-slate-900 dark:via-slate-900 dark:to-slate-800 from-blue-50 via-white to-green-50 min-h-screen flex items-center justify-center">
+      <header className="flex min-h-screen items-center justify-center bg-linear-to-br from-blue-50 via-white to-green-50 dark:from-slate-900 dark:via-slate-900 dark:to-slate-800">
         <Navbar />
-        <Hero />
+        <Suspense
+          fallback={
+            <div className="flex min-h-screen items-center justify-center">
+              <div className="h-32 w-32 animate-spin rounded-full border-b-2 border-blue-600"></div>
+            </div>
+          }
+        >
+          <Hero />
+        </Suspense>
       </header>
-      <About />
-      <Skills />
+      <Suspense
+        fallback={
+          <div className="flex items-center justify-center py-20">
+            <div className="h-16 w-16 animate-spin rounded-full border-b-2 border-blue-600"></div>
+          </div>
+        }
+      >
+        <About />
+      </Suspense>
+      <Suspense
+        fallback={
+          <div className="flex items-center justify-center py-20">
+            <div className="h-16 w-16 animate-spin rounded-full border-b-2 border-blue-600"></div>
+          </div>
+        }
+      >
+        <Skills />
+      </Suspense>
     </ThemeProvider>
   );
 }

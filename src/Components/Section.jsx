@@ -1,16 +1,21 @@
-import Reveal from "./Reveal";
+import { motion } from "motion/react";
 
 export default function Section({ id, title, children, type }) {
   return (
-    <section id={id} className={`py-20 px-4 ${type}`}>
+    <section id={id} className={`px-4 py-20 ${type}`}>
       <div className="container mx-auto max-w-5xl">
-        <Reveal>
-          <div className="text-center mb-12">
-            <h2 className="mb-4 font-bold text-gray-800 text-4xl md:text-5xl dark:text-white">
-              {title}
-            </h2>
-          </div>
-        </Reveal>
+        <div className="mb-12 text-center">
+          <motion.h2
+            initial={{ y: 40, opacity: 0 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+            viewport={{ once: true }}
+            className="mb-4 text-4xl font-bold text-gray-800 md:text-5xl dark:text-white"
+          >
+            {title}
+          </motion.h2>
+        </div>
+
         {children}
       </div>
     </section>

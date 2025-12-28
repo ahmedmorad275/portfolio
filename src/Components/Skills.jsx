@@ -1,4 +1,3 @@
-import Reveal from "./Reveal";
 import Section from "./Section";
 import { motion } from "motion/react";
 export default function Skills() {
@@ -46,24 +45,25 @@ export default function Skills() {
   ];
   return (
     <Section id={"skills"} title={"Skills & Technologies"} type={"secSection"}>
-      <motion.div className="grid md:grid-cols-2 gap-6 pt-12">
+      <motion.div className="grid gap-6 pt-12 md:grid-cols-2">
         {mySkills.map((skill) => (
           <motion.div
+            key={skill.name}
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 1.5 }}
             viewport={{ once: true }}
-            className="dark:bg-slate-900 p-6 bg-white shadow-md hover:shadow-xl transition-shadow rounded-lg"
+            className="rounded-lg bg-white p-6 shadow-md transition-shadow hover:shadow-xl dark:bg-slate-900"
           >
-            <div className="flex justify-between mb-2 items-center">
+            <div className="mb-2 flex items-center justify-between">
               <h3 className="font-semibold text-gray-900 dark:text-white">
                 {skill.name}
               </h3>
-              <p className="text-gray-600 dark:text-gray-400 text-sm">
+              <p className="text-sm text-gray-600 dark:text-gray-400">
                 {skill.percent}%
               </p>
             </div>
-            <div className="bg-gray-200 dark:bg-slate-700 overflow-hidden h-3 w-full rounded-full">
+            <div className="h-3 w-full overflow-hidden rounded-full bg-gray-200 dark:bg-slate-700">
               <motion.div
                 initial={{ width: 0 }}
                 whileInView={{ width: skill.percent + "%" }}
