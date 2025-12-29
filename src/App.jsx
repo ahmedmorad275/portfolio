@@ -6,6 +6,7 @@ import { ThemeProvider } from "./Context/ThemeContext";
 const Hero = lazy(() => import("./Components/Hero"));
 const About = lazy(() => import("./Components/About"));
 const Skills = lazy(() => import("./Components/Skills"));
+const Projects = lazy(() => import("./Components/Projects"));
 
 function App() {
   return (
@@ -39,6 +40,15 @@ function App() {
         }
       >
         <Skills />
+      </Suspense>
+      <Suspense
+        fallback={
+          <div className="flex items-center justify-center py-20">
+            <div className="h-16 w-16 animate-spin rounded-full border-b-2 border-blue-600"></div>
+          </div>
+        }
+      >
+        <Projects />
       </Suspense>
     </ThemeProvider>
   );
