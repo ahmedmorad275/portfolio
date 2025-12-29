@@ -20,9 +20,9 @@ export default function About() {
     <Section id="about" type={"primarySection"} title={"About Me"}>
       <div className="grid items-center gap-12 md:grid-cols-2">
         <motion.div
-          initial={{ opacity: 0, x: -10 }}
+          initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1 }}
+          transition={{ duration: 0.6 }}
           viewport={{ once: true }}
           className="flex items-center justify-center pt-12"
         >
@@ -36,9 +36,9 @@ export default function About() {
         </motion.div>
         <div className="flex-1">
           <motion.div
-            initial={{ opacity: 0, x: 10 }}
+            initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1 }}
+            transition={{ duration: 0.6 }}
             viewport={{ once: true }}
             className="mb-8 text-lg leading-relaxed text-gray-700 dark:text-gray-300"
           >
@@ -50,9 +50,9 @@ export default function About() {
             but also highly functional and accessible.
           </motion.div>
           <motion.div
-            initial={{ opacity: 0, y: 10 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
             className="grid grid-cols-3 gap-4"
           >

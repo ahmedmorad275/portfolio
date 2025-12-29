@@ -8,13 +8,14 @@ export default function Card({
   techs = [],
   liveLink,
   srcLink,
+  index
 }) {
   return (
     <motion.div
-      initial={{ opacity: 0, x: 40 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      transition={{ duration: 1 }}
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
+      transition={{ duration: 0.6, delay: index * 0.1 }}
       className="group flex flex-col overflow-hidden rounded-lg bg-gray-50 shadow-lg transition-all duration-300 hover:shadow-2xl dark:bg-slate-800"
     >
       <div className="relative h-48 overflow-hidden">

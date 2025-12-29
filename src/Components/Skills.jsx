@@ -46,12 +46,12 @@ export default function Skills() {
   return (
     <Section id={"skills"} title={"Skills & Technologies"} type={"secSection"}>
       <motion.div className="grid gap-6 pt-12 md:grid-cols-2">
-        {mySkills.map((skill) => (
+        {mySkills.map((skill, index) => (
           <motion.div
             key={skill.name}
-            initial={{ opacity: 0, x: -30 }}
+            initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1.5 }}
+            transition={{ duration: 0.6, delay: index * 0.1 }}
             viewport={{ once: true }}
             className="rounded-lg bg-white p-6 shadow-md transition-shadow hover:shadow-xl dark:bg-slate-900"
           >
@@ -66,8 +66,8 @@ export default function Skills() {
             <div className="h-3 w-full overflow-hidden rounded-full bg-gray-200 dark:bg-slate-700">
               <motion.div
                 initial={{ width: 0 }}
-                whileInView={{ width: skill.percent + "%" }}
-                transition={{ duration: 1, delay: 0.5 }}
+                whileInView={{ width: `${skill.percent}%` }}
+                transition={{ duration: 1, delay: index * 0.1 }}
                 viewport={{ once: true }}
                 className={`h-full ${skill.color} rounded-full`}
                 // style={{

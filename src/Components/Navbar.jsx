@@ -5,7 +5,6 @@ import {
   MdOutlineDarkMode,
   MdOutlineMenu,
 } from "react-icons/md";
-import { motion } from "motion/react";
 import { IoMdClose } from "react-icons/io";
 import { ThemeContext } from "../Context/ThemeContext";
 import { FaWindowMinimize } from "react-icons/fa";
@@ -67,10 +66,7 @@ export default function Navbar() {
   };
 
   return (
-    <motion.nav
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.8, ease: "easeInOut" }}
+    <nav
       className={`fixed top-0 right-0 left-0 z-50 transition-all duration-300 ${
         scrolled
           ? "bg-white/90 shadow-lg backdrop-blur-md dark:bg-slate-900/90"
@@ -144,6 +140,6 @@ export default function Navbar() {
           </ul>
         </div>
       )}
-    </motion.nav>
+    </nav>
   );
 }

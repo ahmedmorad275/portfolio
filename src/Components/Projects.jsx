@@ -6,7 +6,6 @@ import globalTracker from "../assets/posters/globalTracker.png";
 import muslim from "../assets/posters/muslim.png";
 import toDo from "../assets/posters/toDo.png";
 import weather from "../assets/posters/weather.png";
-import { motion } from "motion/react";
 export default function Projects() {
   const myProjects = [
     {
@@ -62,24 +61,20 @@ export default function Projects() {
       type={"primarySection"}
       title={"Featured Projects"}
     >
-      <motion.div
-        initial={{ opacity: 0, x: 40 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true }}
-        className="grid gap-8 pt-12 md:grid-cols-2 lg:grid-cols-3"
-      >
-        {myProjects.map((project) => (
+      <div className="grid gap-8 pt-12 md:grid-cols-2 lg:grid-cols-3">
+        {myProjects.map((project, index) => (
           <Card
             name={project.name}
             techs={project.techs}
-            key={project.name}
+            key={index}
             description={project.description}
             liveLink={project.live}
             srcLink={project.srcLink}
             imageSrc={project.image}
+            index={index}
           />
         ))}
-      </motion.div>
+      </div>
     </Section>
   );
 }

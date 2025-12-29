@@ -8,9 +8,9 @@ export default function Hero() {
       <div className="container mx-auto">
         <div className="mx-auto max-w-4xl text-center">
           <motion.div
-            initial={{ y: "100px" }}
-            animate={{ y: "0px" }}
-            transition={{ duration: 1.5 }}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
           >
             <p className="mb-2 text-lg text-gray-600 dark:text-gray-400">
               Hi, I'm
@@ -26,9 +26,12 @@ export default function Hero() {
             </p>
 
             <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <button className="cursor-pointer rounded-lg bg-blue-600 px-7 py-2 font-medium text-white shadow-lg transition-colors duration-200 hover:bg-blue-700 hover:shadow-xl">
+              <a
+                href="#projects"
+                className="cursor-pointer rounded-lg bg-blue-600 px-7 py-2 font-medium text-white shadow-lg transition-colors duration-200 hover:bg-blue-700 hover:shadow-xl"
+              >
                 View Projects
-              </button>
+              </a>
               <button className="flex cursor-pointer items-center gap-2 rounded-lg border-2 border-blue-600 bg-slate-50 px-7 py-2 font-medium text-blue-600 transition-colors duration-200 hover:bg-slate-100 dark:bg-slate-800 dark:text-blue-400 dark:hover:bg-slate-700">
                 <MdOutlineFileDownload size="20px" />
                 Download CV
