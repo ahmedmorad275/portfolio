@@ -32,10 +32,14 @@ export default function Hero() {
               >
                 View Projects
               </a>
-              <button className="flex cursor-pointer items-center gap-2 rounded-lg border-2 border-blue-600 bg-slate-50 px-7 py-2 font-medium text-blue-600 transition-colors duration-200 hover:bg-slate-100 dark:bg-slate-800 dark:text-blue-400 dark:hover:bg-slate-700">
+              <a
+                href="../../public/Ahmed_Morad_Resume.pdf"
+                download
+                className="flex items-center gap-2 rounded-lg border-2 border-blue-600 bg-slate-50 px-7 py-2 font-medium text-blue-600 transition-colors duration-200 hover:bg-slate-100 dark:bg-slate-800 dark:text-blue-400 dark:hover:bg-slate-700"
+              >
                 <MdOutlineFileDownload size="20px" />
                 Download CV
-              </button>
+              </a>
             </div>
             <div className="arrowDown mt-16 flex justify-center text-2xl">
               <button className="cursor-pointer text-gray-400 transition-colors hover:text-blue-600 dark:hover:text-blue-400">
