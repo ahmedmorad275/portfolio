@@ -1,16 +1,115 @@
-# React + Vite
+## Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A personal portfolio website built with React and Vite. This project showcases projects, skills, and contact information using a component-based structure and a theme context for light/dark mode.
 
-Currently, two official plugins are available:
+Live demo: http://portfolio-ten-silk-n4i3t277ma.vercel.app/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## React Compiler
+## Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Responsive portfolio layout
+- Theme (light/dark) switching via `src/Context/ThemeContext.jsx`
+- Sections for About, Projects, Skills, Contact, and more
+- Component-driven structure for easy customization
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- React
+- Vite
+- JavaScript (ESModules)
+- CSS (see `index.css`)
+
+## Getting Started
+
+Prerequisites
+
+- Node.js (v14+ recommended)
+- npm (or yarn)
+
+Install and run locally
+
+```bash
+# from project root
+npm install
+npm run dev
+```
+
+Build for production
+
+```bash
+npm run build
+npm run preview
+```
+
+These commands assume the default Vite scripts in `package.json`:
+
+- `dev` or `start` — runs the dev server
+- `build` — bundles the app for production
+- `preview` — locally preview the production build
+
+If your `package.json` uses different script names, update the commands accordingly.
+
+## Project Structure
+
+```
+/ (project root)
+	├─ index.html
+	├─ package.json
+	├─ src/
+	│   ├─ main.jsx
+	│   ├─ App.jsx
+	│   ├─ index.css
+	│   ├─ assets/
+	│   │   └─ posters/
+	│   ├─ Components/
+	│   │   ├─ About.jsx
+	│   │   ├─ Card.jsx
+	│   │   ├─ Contact.jsx
+	│   │   ├─ Footer.jsx
+	│   │   ├─ Hero.jsx
+	│   │   ├─ Navbar.jsx
+	│   │   ├─ Projects.jsx
+	│   │   ├─ Section.jsx
+	│   │   └─ Skills.jsx
+	│   └─ Context/
+	│       └─ ThemeContext.jsx
+	└─ README.md
+```
+
+Key files
+
+- `src/Context/ThemeContext.jsx` — theme provider and hook for toggling theme
+- `src/Components/Navbar.jsx` — likely contains navigation and theme toggle
+- `src/Components/Projects.jsx` — component to list portfolio projects
+
+## Customization
+
+- Update content in the `src/Components` files to change text, links, and project items.
+- Replace images in `src/assets/posters/` and adjust references in components.
+- Edit theme defaults in `src/Context/ThemeContext.jsx` to change initial mode or colors.
+
+## Deployment
+
+This project can be deployed to platforms like Vercel, Netlify, or GitHub Pages. Typical steps for Vercel/Netlify:
+
+- Build your app: `npm run build`
+- Deploy the output from the `dist/` folder (Vite default)
+
+If using Git-based deploys (Vercel/Netlify), simply connect the repo and set the build command to `npm run build` and the publish directory to `dist`.
+
+## Contributing
+
+1. Fork the repository
+2. Create a branch: `git checkout -b feature/your-feature`
+3. Commit your changes: `git commit -m "Add feature"`
+4. Push to the branch: `git push origin feature/your-feature`
+5. Open a Pull Request
+
+## License
+
+This project is released under the AMG License. Replace with your preferred license if different.
+
+## Contact
+
+- GitHub: https://github.com/ahmedmorad275/portfolio
+- Author: Ahmed Morad (ahmedmorad569@gmail.com)
