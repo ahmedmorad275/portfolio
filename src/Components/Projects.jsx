@@ -6,7 +6,9 @@ import globalTracker from "../assets/posters/globalTracker.png";
 import muslim from "../assets/posters/muslim.png";
 import toDo from "../assets/posters/toDo.png";
 import weather from "../assets/posters/weather.png";
+import { useTranslation } from "react-i18next";
 export default function Projects() {
+  const { t } = useTranslation();
   const myProjects = [
     {
       name: "AMG Cinema",
@@ -59,7 +61,7 @@ export default function Projects() {
     <Section
       id={"projects"}
       type={"primarySection"}
-      title={"Featured Projects"}
+      title={t("projects.title")}
     >
       <div className="grid gap-8 pt-12 md:grid-cols-2 lg:grid-cols-3">
         {myProjects.map((project, index) => (

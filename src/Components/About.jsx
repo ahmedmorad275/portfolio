@@ -1,23 +1,25 @@
 import Section from "./Section";
 import myImage from "../assets/ahmed_morad.jpg";
 import { motion } from "motion/react";
+import { useTranslation } from "react-i18next";
 export default function About() {
+  const { t } = useTranslation();
   const stats = [
     {
       num: 1,
-      text: "Year Experience",
+      text: "years",
     },
     {
       num: 10,
-      text: "Projects Completed",
+      text: "projects",
     },
     {
       num: 3,
-      text: "Happy Clients",
+      text: "clients",
     },
   ];
   return (
-    <Section id="about" type={"primarySection"} title={"About Me"}>
+    <Section id="about" type={"primarySection"} title={t(`about.title`)}>
       <div className="grid items-center gap-12 md:grid-cols-2">
         <motion.div
           initial={{ opacity: 0, x: -50 }}
@@ -42,12 +44,7 @@ export default function About() {
             viewport={{ once: true }}
             className="mb-8 text-lg leading-relaxed text-gray-700 dark:text-gray-300"
           >
-            I'm a passionate Frontend Developer specializing in React.js with a
-            keen eye for creating clean, efficient, and user-centric interfaces.
-            I focus on writing maintainable code, optimizing performance, and
-            delivering real-world solutions that make a difference. My goal is
-            to craft digital experiences that are not only visually appealing
-            but also highly functional and accessible.
+            {t(`about.des`)}
           </motion.div>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -64,8 +61,8 @@ export default function About() {
                 <h3 className="mb-1 text-3xl font-bold text-blue-600 dark:text-blue-400">
                   + {stat.num}
                 </h3>
-                <p className="text-sm text-gray-600 sm:whitespace-nowrap dark:text-gray-400">
-                  {stat.text}
+                <p className="text-sm text-gray-600 dark:text-gray-400 sm:whitespace-nowrap">
+                  {t(`about.${stat.text}`)}
                 </p>
               </div>
             ))}

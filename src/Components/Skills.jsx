@@ -1,6 +1,8 @@
 import Section from "./Section";
 import { motion } from "motion/react";
+import { useTranslation } from "react-i18next";
 export default function Skills() {
+  const { t } = useTranslation();
   const mySkills = [
     {
       name: "HTML",
@@ -44,7 +46,7 @@ export default function Skills() {
     },
   ];
   return (
-    <Section id={"skills"} title={"Skills & Technologies"} type={"secSection"}>
+    <Section id={"skills"} title={t("skills.title")} type={"secSection"}>
       <motion.div className="grid gap-6 pt-12 md:grid-cols-2">
         {mySkills.map((skill, index) => (
           <motion.div

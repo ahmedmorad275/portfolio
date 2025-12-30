@@ -1,6 +1,7 @@
 import { HiOutlineExternalLink } from "react-icons/hi";
 import { RiGithubLine } from "react-icons/ri";
 import { motion } from "motion/react";
+import { useTranslation } from "react-i18next";
 export default function Card({
   imageSrc,
   name,
@@ -10,12 +11,13 @@ export default function Card({
   srcLink,
   index,
 }) {
+  const { t } = useTranslation();
   return (
     <motion.div
-      initial={{ opacity: 0, x: 50 }}
-      whileInView={{ opacity: 1, x: 0 }}
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.6, delay: index * 0.1, ease: "easeInOut" }}
+      transition={{ duration: 1, delay: index * 0.1, ease: "easeInOut" }}
       className="group flex flex-col overflow-hidden rounded-lg bg-gray-50 shadow-lg transition-all duration-300 hover:shadow-2xl dark:bg-slate-800"
     >
       <div className="relative h-48 overflow-hidden">
@@ -26,7 +28,7 @@ export default function Card({
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
       </div>
-      <div className="flex flex-1 flex-col justify-between p-5">
+      <div className="flex flex-1 flex-col justify-between p-5 text-left">
         <div className="mb-4">
           <h3 className="mb-2 text-xl font-bold text-gray-800 dark:text-white">
             {name}
@@ -50,7 +52,7 @@ export default function Card({
             className="flex items-center gap-2 rounded-lg bg-blue-600 px-4 py-2 text-sm text-white transition-colors hover:bg-blue-700"
           >
             <HiOutlineExternalLink />
-            Live Demo
+            {t("projects.live")}
           </a>
           <a
             target="_blank"
@@ -58,7 +60,7 @@ export default function Card({
             className="flex items-center gap-2 rounded-lg bg-gray-700 px-4 py-2 text-sm text-white transition-colors hover:bg-gray-800"
           >
             <RiGithubLine />
-            View Code
+            {t("projects.github")}
           </a>
         </div>
       </div>

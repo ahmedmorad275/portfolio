@@ -1,0 +1,46 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "skills": "Skills",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "hero": {
+    "welcome": "Hi, I'm",
+    "name": "Ahmed Morad",
+    "job": "Frontend Developer",
+    "des": "Building beautiful, performant, and user-friendly web applications",
+    "projects": "View Projects",
+    "cv": "Download CV"
+  },
+  "about": {
+    "title": "About Me",
+    "des": "I'm a passionate Frontend Developer specializing in React.js with a keen eye for creating clean, efficient, and user-centric interfaces. I focus on writing maintainable code, optimizing performance, and delivering real-world solutions that make a difference. My goal is to craft digital experiences that are not only visually appealing but also highly functional and accessible.",
+    "years": "Year Experience",
+    "projects": "Projects Completed",
+    "clients": "Happy Clients"
+  },
+  "skills": {
+    "title": "Skills & Technologies"
+  },
+  "projects": {
+    "title": "Featured Projects",
+    "live": "Live Demo",
+    "github": "View Code"
+  },
+  "contact": {
+    "title": "Get In Touch",
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "send": "Send Message",
+    "connect": "Let's Connect",
+    "des": "I'm always interested in hearing about new projects and opportunities. Whether you have a question or just want to say hi, feel free to reach out!"
+  },
+  "form": {
+    "name": "Enter your name...",
+    "email": "Enter your email...",
+    "message": "Enter your message..."
+  }
+}

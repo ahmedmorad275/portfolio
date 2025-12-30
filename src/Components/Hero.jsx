@@ -1,8 +1,10 @@
 import { MdOutlineFileDownload } from "react-icons/md";
 import { FaArrowDown } from "react-icons/fa";
 import { motion } from "motion/react";
+import { useTranslation } from "react-i18next";
 
 export default function Hero() {
+  const { t } = useTranslation();
   return (
     <section id="home" className="px-4 pt-16">
       <div className="container mx-auto">
@@ -13,16 +15,16 @@ export default function Hero() {
             transition={{ duration: 0.6 }}
           >
             <p className="mb-2 text-lg text-gray-600 dark:text-gray-400">
-              Hi, I'm
+              {t("hero.welcome")}
             </p>
-            <h1 className="mb-4 text-5xl font-bold text-gray-800 md:text-7xl dark:text-white">
-              Ahmed Morad
+            <h1 className="mb-4 text-5xl font-bold text-gray-800 dark:text-white md:text-7xl">
+              {t("hero.name")}
             </h1>
-            <h2 className="mb-6 text-2xl font-semibold text-blue-600 md:text-3xl dark:text-blue-400">
-              Frontend Developer | React.js
+            <h2 className="mb-6 text-2xl font-semibold text-blue-600 dark:text-blue-400 md:text-3xl">
+              {t("hero.job")} | React.js
             </h2>
             <p className="mb-8 text-lg text-gray-600 dark:text-gray-400">
-              Building beautiful, performant, and user-friendly web applications
+              {t("hero.des")}
             </p>
 
             <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
@@ -30,7 +32,7 @@ export default function Hero() {
                 href="#projects"
                 className="cursor-pointer rounded-lg bg-blue-600 px-6 py-2 font-medium text-white shadow-lg transition-colors duration-200 hover:bg-blue-700 hover:shadow-xl"
               >
-                View Projects
+                {t("hero.projects")}
               </a>
               <a
                 href="/Ahmed_Morad_Resume.pdf"
@@ -38,7 +40,7 @@ export default function Hero() {
                 className="flex items-center gap-2 rounded-lg border-2 border-blue-600 bg-slate-50 px-6 py-2 font-medium text-blue-600 transition-colors duration-200 hover:bg-slate-100 dark:bg-slate-800 dark:text-blue-400 dark:hover:bg-slate-700"
               >
                 <MdOutlineFileDownload size="20px" />
-                Download CV
+                {t("hero.cv")}
               </a>
             </div>
             <div className="arrowDown mt-16 flex justify-center text-2xl">

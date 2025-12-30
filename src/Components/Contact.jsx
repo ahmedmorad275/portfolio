@@ -4,17 +4,17 @@ import { LuLinkedin, LuGithub } from "react-icons/lu";
 import { LuSend } from "react-icons/lu";
 import emailjs from "@emailjs/browser";
 import { useState } from "react";
-
-
+import { useTranslation } from "react-i18next";
 
 export default function Contact() {
+  const { t } = useTranslation();
 
-  const [name, setName] = useState('')
-  const [email, setEmail] = useState('')
-  const [message, setMessage] = useState('')
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
 
-  const handleSubmit = (e)=> {
-    e.preventDefault()
+  const handleSubmit = (e) => {
+    e.preventDefault();
     const templateParams = {
       name,
       email,
@@ -26,7 +26,7 @@ export default function Contact() {
         "service_bplalyu",
         "template_08p8cm2",
         templateParams,
-        "oexhQTawulHi2mkMd"
+        "oexhQTawulHi2mkMd",
       )
       .then(() => {
         alert("Message Sent Successfully");
@@ -37,19 +37,17 @@ export default function Contact() {
       .catch(() => {
         alert("حصل خطأ ❌");
       });
-  }
+  };
 
   return (
-    <Section title={"Get In Touch"} id={"contact"} type={"secSection"}>
+    <Section title={t("contact.title")} id={"contact"} type={"secSection"}>
       <div className="grid gap-14 pt-12 md:grid-cols-2">
         <div>
-          <h2 className="mb-6 text-2xl font-bold text-gray-800 md:text-3xl dark:text-white">
-            Let's Contact
+          <h2 className="mb-6 text-2xl font-bold text-gray-800 dark:text-white md:text-3xl">
+            {t("contact.connect")}
           </h2>
           <p className="mb-8 text-gray-600 dark:text-gray-400">
-            I'm always interested in hearing about new projects and
-            opportunities, Wether you have a question or just want to say Hi,
-            feel free to reach out!
+            {t("contact.des")}
           </p>
           <div className="space-y-4">
             <a
@@ -82,16 +80,17 @@ export default function Contact() {
                 className="mb-2 block font-medium text-gray-700 dark:text-gray-300"
                 htmlFor="name"
               >
-                Your Name
+                {t("contact.name")}
               </label>
               <input
-              value={name}
-                onChange={(e)=> setName(e.target.value)}
+                value={name}
+                onChange={(e) => setName(e.target.value)}
                 required
-                className="w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-gray-800 focus:ring-2 focus:ring-blue-600 focus:outline-none dark:border-slate-700 dark:bg-slate-900 dark:text-white"
+                className="w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-600 dark:border-slate-700 dark:bg-slate-900 dark:text-white"
                 type="text"
                 id="name"
                 name="name"
+                placeholder={t("form.name")}
               />
             </div>
             <div>
@@ -99,13 +98,14 @@ export default function Contact() {
                 className="mb-2 block font-medium text-gray-700 dark:text-gray-300"
                 htmlFor="email"
               >
-                Your Email
+                {t("contact.email")}
               </label>
               <input
+                placeholder={t("form.email")}
                 value={email}
-                onChange={(e)=> setEmail(e.target.value)}
+                onChange={(e) => setEmail(e.target.value)}
                 required
-                className="w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-gray-800 focus:ring-2 focus:ring-blue-600 focus:outline-none dark:border-slate-700 dark:bg-slate-900 dark:text-white"
+                className="w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-600 dark:border-slate-700 dark:bg-slate-900 dark:text-white"
                 type="email"
                 id="email"
                 name="email"
@@ -116,14 +116,15 @@ export default function Contact() {
                 className="mb-2 block font-medium text-gray-700 dark:text-gray-300"
                 htmlFor="message"
               >
-                Your Message
+                {t("contact.message")}
               </label>
               <textarea
-              value={message}
-                onChange={(e)=> setMessage(e.target.value)}
+                placeholder={t("form.message")}
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
                 required
                 rows={4}
-                className="w-full resize-none rounded-lg border border-gray-300 bg-white px-4 py-3 text-gray-800 focus:ring-2 focus:ring-blue-600 focus:outline-none dark:border-slate-700 dark:bg-slate-900 dark:text-white"
+                className="w-full resize-none rounded-lg border border-gray-300 bg-white px-4 py-3 text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-600 dark:border-slate-700 dark:bg-slate-900 dark:text-white"
                 name="message"
                 id="message"
               ></textarea>
@@ -133,7 +134,7 @@ export default function Contact() {
               className="flex w-full cursor-pointer items-center justify-center gap-2 rounded-lg bg-blue-600 px-6 py-3 text-center font-semibold text-white transition-all duration-200 hover:bg-blue-700"
             >
               <LuSend />
-              Send Message
+              {t("contact.send")}
             </button>
           </form>
         </div>
