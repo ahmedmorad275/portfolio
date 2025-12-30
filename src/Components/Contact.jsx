@@ -2,8 +2,43 @@ import Section from "./Section";
 import { MdOutlineMail } from "react-icons/md";
 import { LuLinkedin, LuGithub } from "react-icons/lu";
 import { LuSend } from "react-icons/lu";
+import emailjs from "@emailjs/browser";
+import { useState } from "react";
+
+
 
 export default function Contact() {
+
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [message, setMessage] = useState('')
+
+  const handleSubmit = (e)=> {
+    e.preventDefault()
+    const templateParams = {
+      name,
+      email,
+      message,
+    };
+
+    emailjs
+      .send(
+        "service_bplalyu",
+        "template_08p8cm2",
+        templateParams,
+        "oexhQTawulHi2mkMd"
+      )
+      .then(() => {
+        alert("Message Sent Successfully");
+        setName("");
+        setEmail("");
+        setMessage("");
+      })
+      .catch(() => {
+        alert("حصل خطأ ❌");
+      });
+  }
+
   return (
     <Section title={"Get In Touch"} id={"contact"} type={"secSection"}>
       <div className="grid gap-14 pt-12 md:grid-cols-2">
@@ -41,7 +76,7 @@ export default function Contact() {
           </div>
         </div>
         <div>
-          <form action="#" className="space-y-6">
+          <form onSubmit={handleSubmit} className="space-y-6">
             <div>
               <label
                 className="mb-2 block font-medium text-gray-700 dark:text-gray-300"
@@ -50,6 +85,8 @@ export default function Contact() {
                 Your Name
               </label>
               <input
+              value={name}
+                onChange={(e)=> setName(e.target.value)}
                 required
                 className="w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-gray-800 focus:ring-2 focus:ring-blue-600 focus:outline-none dark:border-slate-700 dark:bg-slate-900 dark:text-white"
                 type="text"
@@ -65,6 +102,8 @@ export default function Contact() {
                 Your Email
               </label>
               <input
+                value={email}
+                onChange={(e)=> setEmail(e.target.value)}
                 required
                 className="w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-gray-800 focus:ring-2 focus:ring-blue-600 focus:outline-none dark:border-slate-700 dark:bg-slate-900 dark:text-white"
                 type="email"
@@ -80,6 +119,8 @@ export default function Contact() {
                 Your Message
               </label>
               <textarea
+              value={message}
+                onChange={(e)=> setMessage(e.target.value)}
                 required
                 rows={4}
                 className="w-full resize-none rounded-lg border border-gray-300 bg-white px-4 py-3 text-gray-800 focus:ring-2 focus:ring-blue-600 focus:outline-none dark:border-slate-700 dark:bg-slate-900 dark:text-white"
