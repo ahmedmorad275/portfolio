@@ -24,7 +24,7 @@ export default function Card({
           src={imageSrc}
           alt={name}
         />
-        <div className="absolute inset-0 bg-linear-to-t from-black/60 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
       </div>
       <div className="flex flex-1 flex-col justify-between p-5">
         <div className="mb-4">
@@ -47,7 +47,7 @@ export default function Card({
           <a
             target="_blank"
             href={liveLink}
-            className="flex items-center gap-2 rounded-lg bg-blue-600 px-6 py-2 text-sm text-white transition-colors hover:bg-blue-700"
+            className="flex items-center gap-2 rounded-lg bg-blue-600 px-4 py-2 text-sm text-white transition-colors hover:bg-blue-700"
           >
             <HiOutlineExternalLink />
             Live Demo
@@ -55,7 +55,7 @@ export default function Card({
           <a
             target="_blank"
             href={srcLink}
-            className="flex items-center gap-2 rounded-lg bg-gray-700 px-6 py-2 text-sm text-white transition-colors hover:bg-gray-800"
+            className="flex items-center gap-2 rounded-lg bg-gray-700 px-4 py-2 text-sm text-white transition-colors hover:bg-gray-800"
           >
             <RiGithubLine />
             View Code

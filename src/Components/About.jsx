@@ -26,7 +26,7 @@ export default function About() {
           viewport={{ once: true }}
           className="flex items-center justify-center pt-12"
         >
-          <div className="h-90 w-90 overflow-hidden rounded-full">
+          <div className="h-72 w-72 overflow-hidden rounded-full">
             <img
               src={myImage}
               className="scale-125 object-center"

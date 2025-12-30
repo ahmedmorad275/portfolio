@@ -14,7 +14,7 @@ const Contact = lazy(() => import("./Components/Contact"));
 function App() {
   return (
     <ThemeProvider>
-      <header className="flex min-h-screen items-center justify-center bg-linear-to-br from-blue-50 via-white to-green-50 dark:from-slate-900 dark:via-slate-900 dark:to-slate-800">
+      <header className="flex min-h-screen items-center justify-center bg-gradient-to-br from-blue-50 via-white to-green-50 dark:from-slate-900 dark:via-slate-900 dark:to-slate-800">
         <Navbar />
         <Suspense
           fallback={
