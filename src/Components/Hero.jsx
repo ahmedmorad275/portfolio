@@ -28,14 +28,14 @@ export default function Hero() {
             <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
               <a
                 href="#projects"
-                className="cursor-pointer rounded-lg bg-blue-600 px-7 py-2 font-medium text-white shadow-lg transition-colors duration-200 hover:bg-blue-700 hover:shadow-xl"
+                className="cursor-pointer rounded-lg bg-blue-600 px-6 py-2 font-medium text-white shadow-lg transition-colors duration-200 hover:bg-blue-700 hover:shadow-xl"
               >
                 View Projects
               </a>
               <a
                 href="../../public/Ahmed_Morad_Resume.pdf"
                 download
-                className="flex items-center gap-2 rounded-lg border-2 border-blue-600 bg-slate-50 px-7 py-2 font-medium text-blue-600 transition-colors duration-200 hover:bg-slate-100 dark:bg-slate-800 dark:text-blue-400 dark:hover:bg-slate-700"
+                className="flex items-center gap-2 rounded-lg border-2 border-blue-600 bg-slate-50 px-6 py-2 font-medium text-blue-600 transition-colors duration-200 hover:bg-slate-100 dark:bg-slate-800 dark:text-blue-400 dark:hover:bg-slate-700"
               >
                 <MdOutlineFileDownload size="20px" />
                 Download CV

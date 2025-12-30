@@ -2,6 +2,7 @@ import { lazy, Suspense } from "react";
 import Navbar from "./Components/Navbar";
 import { ThemeProvider } from "./Context/ThemeContext";
 import Footer from "./Components/Footer";
+import ScrollToTop from "./Components/ScrollToTop";
 
 // Lazy load components
 const Hero = lazy(() => import("./Components/Hero"));
@@ -62,6 +63,7 @@ function App() {
         <Contact />
       </Suspense>
       <Footer />
+      <ScrollToTop />
     </ThemeProvider>
   );
 }

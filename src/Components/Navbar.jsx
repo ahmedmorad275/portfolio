@@ -123,6 +123,7 @@ export default function Navbar() {
               <li key={link.name}>
                 <a
                   href={link.path}
+                  onClick={() => setOpenMenu(false)}
                   className="text-slate-700 transition-colors duration-300 hover:text-blue-400 dark:text-gray-300"
                 >
                   {link.name}

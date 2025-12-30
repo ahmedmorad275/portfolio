@@ -47,7 +47,7 @@ export default function Card({
           <a
             target="_blank"
             href={liveLink}
-            className="flex items-center gap-2 rounded-lg bg-blue-600 px-4 py-2 text-sm text-white transition-colors hover:bg-blue-700"
+            className="flex items-center gap-2 rounded-lg bg-blue-600 px-6 py-2 text-sm text-white transition-colors hover:bg-blue-700"
           >
             <HiOutlineExternalLink />
             Live Demo
@@ -55,7 +55,7 @@ export default function Card({
           <a
             target="_blank"
             href={srcLink}
-            className="flex items-center gap-2 rounded-lg bg-gray-700 px-4 py-2 text-sm text-white transition-colors hover:bg-gray-800"
+            className="flex items-center gap-2 rounded-lg bg-gray-700 px-6 py-2 text-sm text-white transition-colors hover:bg-gray-800"
           >
             <RiGithubLine />
             View Code
