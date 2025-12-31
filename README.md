@@ -107,7 +107,7 @@ If using Git-based deploys (Vercel/Netlify), simply connect the repo and set the
 
 ## License
 
-This project is released under the AMG License. Replace with your preferred license if different.
+This project is released under the AMG License.
 
 ## Contact
 
